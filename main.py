@@ -8,4 +8,4 @@ def hello_world():
 
 @app.route("/patients")
 def patient_list():
-    return "<p>100 patients found!</p>"
+    return "<p>200 patients found!</p>"
