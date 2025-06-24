@@ -10,9 +10,8 @@ def hello_world():
 def patient_list():
     return "<p>200 patients found!</p>"
 
-@app.route("/upload/clients")
-
-# Ask for csv file
-# convert
-def patient_list():
-    return "<p>200 patients found!</p>"
+# @app.route("/upload/clients")
+# # Ask for csv file
+# # convert
+# def patient_list():
+#     return "<p>300 patients found!</p>"
