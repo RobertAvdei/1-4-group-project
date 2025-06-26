@@ -10,12 +10,6 @@ def run():
     consumer = connect_consumer()
     for msg in consumer:
         handle_message(msg)
-        # record = json.loads(msg.value)
-        # employee_id = int(record['id'])
-        # name = record['name']
-
-        # if employee_id != 3:
-        #     print(f"This employee is not Karen. It's actually {name}")
     
     if consumer is not None:
         consumer.close()
