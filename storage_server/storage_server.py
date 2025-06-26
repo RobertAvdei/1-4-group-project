@@ -1,23 +1,24 @@
-
-import json
-
 from kafka import KafkaConsumer
+from topics import verify_topics
+from consumer import connect_consumer
+from handle_message import handle_message
 
-if __name__ == '__main__':
-    consumer = KafkaConsumer(
-        'patients',
-        auto_offset_reset='earliest',
-        bootstrap_servers=['localhost:9092'],
-        api_version=(0, 10),
-        consumer_timeout_ms=1000
-    )
+
+def run():
+    
+    verify_topics()
+    consumer = connect_consumer()
     for msg in consumer:
-        record = json.loads(msg.value)
-        employee_id = int(record['id'])
-        name = record['name']
+        handle_message(msg)
+        # record = json.loads(msg.value)
+        # employee_id = int(record['id'])
+        # name = record['name']
 
-        if employee_id != 3:
-            print(f"This employee is not Karen. It's actually {name}")
-
+        # if employee_id != 3:
+        #     print(f"This employee is not Karen. It's actually {name}")
+    
     if consumer is not None:
         consumer.close()
+        
+if __name__ == '__main__':
+    run()

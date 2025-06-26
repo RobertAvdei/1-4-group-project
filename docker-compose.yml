@@ -14,7 +14,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=example
-      - POSTGRES_DB=ClassicModels
+      - POSTGRES_DB=project_block_4
   kafka:
     container_name: kafka
     image: bitnami/kafka:latest
