@@ -26,16 +26,16 @@ def run_single_query(query='SELECT version()'):
         conn = connect()
         cur = conn.cursor()
         
-        print('query: ',query)
+        # print('query: ',query)
         cur.execute(query)
 
-        result = cur.fetchone()
-
+        conn.commit()
         cur.close()
-        return result
+        print('Query successful')
 
 
     except (Exception, psycopg2.DatabaseError) as error:
+        print('Query Error:')
         print(error)
     finally:
         if conn is not None:

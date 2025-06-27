@@ -9,7 +9,12 @@ def run():
     verify_topics()
     consumer = connect_consumer()
     for msg in consumer:
-        handle_message(msg)
+        try:
+            handle_message(msg)
+        except Exception as e:
+            print("Failed to save message")
+            print(e)
+        
     
     if consumer is not None:
         consumer.close()
