@@ -25,20 +25,15 @@ def connect():
 
 def fetch_one(conn, query='SELECT version()' ):
     cur = conn.cursor()
-    
-    # print('query: ',query)
     cur.execute(query)
+    
     data = cur.fetchall()
     cur.close()
     print('Query successful')
     result =[]
     colnames = [desc[0] for desc in cur.description]
-    print(colnames)
-    for row in data:
-        result.append(dict(zip(colnames, row)))
-    # for column in data:
-    #     print(column)
-    #     result.append(column)
+    result.extend(dict(zip(colnames, row)) for row in data)
+
     return result
 
 if __name__ == '__main__':
