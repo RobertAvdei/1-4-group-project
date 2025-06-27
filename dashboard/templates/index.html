@@ -1,0 +1,87 @@
+{% from './layout/layout.html' import set_layout with context %}
+{% call set_layout() %}
+    <script type="module" src="{{ url_for('static', filename='./javascript/handle_data.js') }}"></script>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css"/>
+
+    <div>
+
+        <h1>Overview</h1>
+        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <h1 style=" position: relative;">Average Patient Age </h1>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div style="font-size: 9em; color: White;" id="avgAge" >0</div>
+                    
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h1 style="  position: relative; top: 20%;">Age range: </h1>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div style="font-size: 9em; color: White; text-align: center;" id="minAge" >0</div>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <div style="font-size: 9em; color: White; text-align: center;"  >-</div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div style="font-size: 9em; color: White; text-align: center;" id="maxAge" >0</div>
+                </div>
+            </div>
+            <hr/>
+                <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <h1 style="font-size: 8em position: relative;">Nr of Patients per Doctor </h1>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div style="font-size: 9em; color: White;" id="avgPat" >0</div>
+
+                    </div>
+                </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h1 style=" position: relative;">Most Common Diagnose type</h1>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div style="font-size: 3em; color: White; text-align: center;" id="diagnosis" >Loading...</div>
+                    
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h1 style=" position: relative;">Most Commonly Administered Procedure</h1>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div style="font-size: 3em; color: White; text-align: center;" id="procedure" >Loading...</div>
+                    
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <h1 style="font-size: 4em; position: relative;">Number of Procedures Per Patient</h1>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div style="font-size: 9em; color: White;" id="proAvg" >0</div>
+                    
+                </div>
+            </div>
+            <br/>
+
+            <br/>
+        </div>
+
+
+        </div>
+
+
+    </div>
+{% endcall %}

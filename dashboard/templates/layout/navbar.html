@@ -1,0 +1,11 @@
+{% macro navbar() -%}
+<div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            {{ nav_button('HOME', 'http://127.0.0.1:5000/') }}
+        </div>
+    </div>
+{% endmacro -%}
+
+{% macro nav_button(name, link) -%}
+          <a href="{{ link}}" class="w3-bar-item w3-button w3-padding-large">{{ name }}</a>
+{% endmacro -%}
