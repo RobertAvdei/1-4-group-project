@@ -130,8 +130,8 @@ def handle_observations(raw_values, topic):
 
 def handle_diagnoses(raw_values, topic):
     print('\nHandling diagnoses')
-    diagnoses_columns = ['diagnosis_id','encounter_id','date_recorded']
-    d_casted_columns = "CAST(diagnosis_id as uuid),CAST(encounter_id as uuid),CAST(date_recorded as date)"
+    diagnoses_columns = ['diagnosis_id','encounter_id','date_recorded','diagnosis_code']
+    d_casted_columns = "CAST(diagnosis_id as uuid),CAST(encounter_id as uuid),CAST(date_recorded as date), diagnosis_code"
     d_key_clause = "diagnosis_id = CAST(NewValues.diagnosis_id AS uuid)"
     handle_json(raw_values, topic, diagnoses_columns,d_casted_columns,d_key_clause)
     

@@ -38,7 +38,8 @@ CREATE TABLE observation_types (observation_code varchar(255) NOT NULL PRIMARY K
 
 CREATE TABLE diagnoses (diagnosis_id uuid NOT NULL PRIMARY KEY,
                         encounter_id uuid,
-                        date_recorded date);
+                        date_recorded date,
+                        diagnosis_code varchar(255));
 
 CREATE TABLE diagnose_types (diagnosis_code varchar(255) NOT NULL PRIMARY KEY,
                             diagnosis_description varchar(255));
