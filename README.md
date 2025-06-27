@@ -1,7 +1,7 @@
 # 1-4-group-project
 Year 1 Block 4 group project repo.
 
-By Robert, Axel & Hafize
+By Robert, Axel, Raydi & Hafize
 
 # Overview
 
