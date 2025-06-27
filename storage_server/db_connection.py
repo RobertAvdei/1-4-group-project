@@ -2,7 +2,7 @@
 import psycopg2
 from configparser import ConfigParser, NoSectionError
 
-def config(filename='database.ini', section='postgresql'):
+def config(filename='./../database.ini', section='postgresql'):
     parser = ConfigParser()
     parser.read(filename)
     if not parser.has_section(section):
